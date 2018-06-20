@@ -111,7 +111,6 @@ namespace Sort
             int[] timeSortMass = new int[testCount];//Для хранения результатов тестов
             int timeSortMassSumm = 0;
             Stopwatch stopWatch;
-            TimeSpan ts = new TimeSpan();
             try
             {
                 for (int i = 0; i < testCount; i++)//10 испытаний одного массива
@@ -144,9 +143,8 @@ namespace Sort
                             break;
                     }
                     stopWatch.Stop();
-                    ts = stopWatch.Elapsed;
-                    timeSortMass[i] = ts.Milliseconds;
-                    timeSortMassSumm += ts.Milliseconds;
+                    timeSortMass[i] = (int)stopWatch.ElapsedMilliseconds;
+                    timeSortMassSumm += (int)stopWatch.ElapsedMillisecond
                 }
             }
             catch (ArgumentException ex)
